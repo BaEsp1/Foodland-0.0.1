@@ -1,0 +1,161 @@
+.stockList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  }
+  
+  .stockList h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  }
+  
+  .stockList table {
+    width: 89%;
+  border-collapse: collapse;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.324);
+  }
+  
+  
+  .stockList td {
+  font-size: 16px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  }
+  
+  .stockList a, .stockList button {
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  }
+  
+  .stockList a {
+  color: #4CAF50;
+  }
+  
+  .stockList button {
+  background-color: #f44336;
+  color: black;
+  /* width: 82px; */
+  }
+  
+  .stockList button:hover {
+  background-color: #d32f2f;
+  }
+  
+  .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  cursor: pointer;
+  }
+  
+  .pagination button {
+      background-color: #ddd;
+      border: 2px black solid;
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+  }
+  
+  .pagination button.active {
+  background-color: #4CAF50;
+  color: black;
+  width: 36px;
+  }
+  
+  .pagination button:hover:not(.active) {
+      background-color: #4CAF50;
+      width: fit-content;
+  }
+
+.searchListUsers{
+    width: 22vw;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: 2px solid #ababab;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 5.5px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.324);
+}
+
+.searchUser{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 2px solid #ababab;
+    color: #fff;
+    background-color: #4e7d48;
+    padding: 4.7px 6px 6.5px 6px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.324);
+}
+
+.sortList{
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: 2px solid #ababab;
+    border-radius: 10px;
+    padding: 5.5px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.324);
+    color: #4e7d48;
+}
+
+.ban{
+ color:rgb(255, 6, 6);
+ font-style: italic;
+}
+
+button.blue{
+    background-color: #4e7d48;
+}
+
+button.blue:hover{
+    background-color: #72b569;
+}
+
+button.red{
+ background-color: #f44336;
+color: black;
+ width: 72px; 
+}
+
+button.red:hover{
+    background-color: #f6695f;
+   color: black;
+    width: 72px; 
+   }
+
+button.black{
+    background-color: black;
+    color:white;
+}
+button.black:hover{
+    background-color: rgb(66, 66, 66);
+    color:white;
+}
+
+.containerListUser{
+width: 68%;
+}
+
+.containerFilters{
+    width: 115%;
+}
+
+.svTitle2{
+    font-family: "Yanone Kaffeesatz";
+    font-size: 57px;
+
+}

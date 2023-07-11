@@ -1,0 +1,270 @@
+
+.ShippingOrder{
+    display: flex;
+    padding: 7%;
+}
+.columna{
+    width: -webkit-fill-available;
+}
+
+.Form-Shipping{
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(228, 227, 227);
+    border-radius: 20px;
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    height: fit-content;
+    width: min-content;
+}
+
+.formInput{
+    display: grid;
+    text-align-last: start;
+}
+
+.formInput label{
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    /* justify-self: right; */
+    margin-bottom: 5px;
+}
+
+.formInput label input{
+    font-size: 22px;
+    margin-left: 10px;
+    /* width:  400px; */
+    border-radius: 11px;
+}
+
+.formInput button{
+    color: white;
+    background-color: rgb(29, 121, 29);
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    margin: auto;
+    padding: 8px;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 2px solid rgb(29, 121, 29);
+    width: 153px;
+    display: flex;
+}
+
+.columna h2{
+    background-color: rgb(0 0 0 / 79%);
+    border-radius: 13px;
+    width: 200px;
+    display: inline-block;
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    color: white;
+    font-size: 26px;
+}
+
+.paypalLogo{
+    width: 200px;
+    height: 60px;
+}
+
+.containerPayment p{
+    font-size: 25px;
+}
+
+.imgResumen{
+    width: 50px;
+    height: 50px;
+    margin-right: 18px;
+}
+
+.resumen .row li{
+    list-style: none;
+    text-align: -webkit-left;
+    display: inline-flex;
+}
+
+.resumen .row{
+    display: grid;
+    background-color: rgb(221 221 221);
+    width: fit-content;
+    margin: auto;
+    border-radius: 11px;
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    list-style: none;
+    padding: 10px;
+}
+
+.row p{
+    font-size: 23px;
+    background-color: #a3a2a282;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.summary{
+    background-color: #c5c5c5a3;
+    width: fit-content;
+    margin: auto;
+    border-radius: 14px;
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    padding: 10px;
+}
+.summary label{
+    display: flex;
+    flex-direction: column;
+}
+
+.summary label h4{
+    display: flex;
+    justify-content: space-around;
+    margin: 11px;
+    font-size: large;
+    
+}
+.summary label h4 span{
+    color:green;
+}
+.summary h3 {
+    display: flex;
+    justify-content: space-around;
+    font-size: 30px;
+    margin: 8px;
+}
+
+.PlaceOrder{
+    color: white;
+    background-color: rgb(29, 121, 29);
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 2px solid rgb(29, 121, 29);
+    width: 213px;
+}
+.PlaceOrder:disabled{
+    color: white;
+    background-color: rgb(121, 29, 29);
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 20px;
+    border: none;
+    width: 213px;
+}
+
+.Shippingtitle{
+    font-weight: bolder;
+}
+
+.Shippingtitle span{
+    font-weight: initial;
+    height: 28pxpx;
+    width: 359px;
+}
+
+.isLogin{
+        background-color: rgb(228, 227, 227);
+        border-radius: 20px;
+        box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+        width: fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        margin: auto;
+        padding: 5px;
+        text-align: -webkit-left;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row
+}
+
+.isLogin input{
+    font-size: 22px;
+    margin-left: 10px;
+    width: 94%;
+    border-radius: 11px;
+}
+.isLogin img{
+    width: 130px;
+    height: 115px;
+    margin-right: 20px;
+    margin-top:10px;
+}
+.isLogin h3{
+    margin: 0px;
+}
+
+.row li h4{
+margin: 0px;
+width: 268px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.row li p{
+    margin: 0px;
+    }
+
+.row li h3{
+margin: 0px;
+align-self:end;
+}
+
+.bottons{
+    padding: 12px;
+    background-color: rgb(228, 227, 227);
+    border-radius: 20px;
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+.bottons button{
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    background-color:rgb(29, 121, 29);
+    border: 2px solid rgb(29, 121, 29);
+    color:white;
+    justify-content: center;
+}
+.bottons a{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+
+.UsersInfo{
+    text-align-last: auto;
+    padding: 0px 15px;
+}
+
+.buttonPaypal{
+    width: 45%;
+    margin: 20px auto;
+}
+
+.formInput div h3{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    color:rgb(29, 121, 29);
+}
+
+.postal{
+    width: 25%;
+    margin-right: 6px;
+}
+
+.ShippingInfo h3{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+    color:rgb(29, 121, 29);
+}

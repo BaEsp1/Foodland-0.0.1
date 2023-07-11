@@ -1,0 +1,20 @@
+.aboutContainer {
+  margin: 20px auto;
+  max-width: 80%;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.titleAbout {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.textAbout {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: justify;
+}

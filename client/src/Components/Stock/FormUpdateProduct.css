@@ -1,0 +1,15 @@
+.btnCancel{
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    background-color: black;
+    cursor: pointer;
+}
+
+.btnCancel:hover{
+    color: black;
+    background-color: #d31b1b;
+}

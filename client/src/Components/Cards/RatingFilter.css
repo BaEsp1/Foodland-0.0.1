@@ -1,0 +1,22 @@
+.ratingg span{
+    color: #f0c040;
+    margin: 0.1rem
+}
+.ratingg span:last-child{
+    color: #404040
+}
+
+
+.ratingg .selected {
+   background-color: #f0c1407e;
+   border-radius: 100px;
+   display: flex;
+   flex-direction: row;
+   margin: 0.2rem;
+   height: 15px;
+  }
+
+.ratingg{
+    display: flex;
+    margin: auto;
+}

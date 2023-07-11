@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&family=Yanone+Kaffeesatz:wght@300;400;700&display=swap ');
+
+.formProductContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 78%;
+  margin: 0 auto;
+  box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 60px;
+  background-color: #ededed;
+  }
+  
+  .formCreate {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  .labelContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 23px;
+    gap: 10px;
+  }
+  
+  .label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 20px;
+  }
+  
+  .input {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 300px;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .inputDescription{
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 940px;
+    height: 200px;
+    text-align: justify;
+    gap: 5px;
+  }
+  
+  .btnContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .btn {
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    background-color: black;
+    cursor: pointer;
+  }
+
+.btn:hover{
+    color: black;
+    background-color: #30925E;
+}
+
+.vistaPrevia{
+    width: 100%;
+}
+
+.vsContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.vsImg{
+    width: 400px;
+}
+
+.errorFormCP {
+  position: fixed ;
+  color: red;
+  font-size: 15px;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: -20px;
+}
+
+.labelContainer label{
+  color:green;
+  font-weight: 500;
+}
+.labelContainer1 .input{
+  width: 85%;
+}
+
+.labelContainer1 label{
+width: 55%;
+color:green;
+font-weight: 500;
+}
+
+.labelContainer1{
+  display: flex;
+  width: 300px;
+}
+
+.errorFormCP1{
+  color: red;
+    font-size: 12px;
+    bottom: -70px;
+    position: relative;
+    width: inherit;
+    left: -95px;
+    height: fit-content;
+}

@@ -1,0 +1,109 @@
+.ContainerPayment{
+    background-color: rgb(228, 227, 227);
+    margin: 22px;
+    border-radius: 20px;
+    box-shadow: 3px 4px 12px rgb(0, 0 ,0,25%);
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: fit-content;
+    align-items: center;
+}
+
+.ContainerPayment h1{
+    background-color: black;
+    color: white;
+    font-size: 26px;
+    padding: 18px;
+    border-radius: 7px;
+    margin-top: 0%;
+    margin-bottom: 4%;
+}
+
+.ContainerPayment hr{
+    height: 1%;
+    background-color: rgb(32, 32, 32);
+    writing-mode: vertical-rl;
+    margin: 2%;
+    width: -webkit-fill-available;
+}
+.ContainerPayment h2{
+    display: flex;
+    justify-content: space-between;
+    margin: 7px 50px 0px 50px;
+    font-weight: 400;
+    font-size:23px;
+    margin: 2%;
+    }
+
+    .ContainerPayment h3{
+        
+        font-size:24px
+        }
+    
+
+.ContainerPayment h2 span{
+color: green;
+}
+
+.ContainerPayment h3{
+    margin:5px;
+    }
+
+.ContainerPayment button{
+    color: white;
+    background-color: rgb(29, 121, 29);
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    margin: inherit;
+    padding: 20px;
+    font-size: 22px;
+    border-radius: 15px;
+    border: 2px solid rgb(29, 121, 29);
+    width: 224px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
+    margin-bottom: 6%;
+
+}
+
+/* .ContainerPayment button:hover{
+    background-color: white;
+    color: rgb(29, 121, 29);
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    margin: inherit;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 20px;
+    border: 2px solid rgb(29, 121, 29);
+} */
+
+.ContainerPayment button a{
+    color: white;
+}
+.ContainerPayment button a:hover{
+color: rgb(29, 121, 29);
+font-weight: bolder;
+}
+
+.ContainerPayment input{
+    display: flex;
+    align-self: center;
+    border-radius: 10px;
+    font-size: initial;
+    text-align: center;
+}
+
+.ContainerPayment p {
+    color:red;
+}
+.ContainerPayment p span {
+    color:green;
+    font-weight: bolder;
+    font-size:20px ;
+}
+

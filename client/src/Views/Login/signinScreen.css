@@ -1,0 +1,115 @@
+.loginContasiner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+  }
+  
+  .formLogin {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formLogin div:first-of-type {
+	margin-bottom: 20px;
+  }
+  
+  .formLogin h1 {
+	font-size: 2rem;
+  }
+  
+  .formLogin label {
+	display: block;
+	font-size: 1.2rem;
+	margin-bottom: 5px;
+  }
+  
+  .formLogin input[type="email"],
+  .formLogin input[type="password"] {
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	width: 300px;
+	max-width: 100%;
+	margin-bottom: 20px;
+  }
+  
+  .formLogin button[type="submit"] {
+	padding: 10px 20px;
+    background-color: #30925E;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	margin-bottom: 20px;
+  }
+  
+  .formLogin button[type="submit"]:hover {
+    background-color: #29b66b;
+  }
+  
+  .formLogin div:last-of-type {
+	font-size: 1.2rem;
+  }
+  
+  .formLogin a {
+	color: #4CAF50;
+  }
+
+
+.imgALogin{
+	position: absolute;
+	left: 20px;
+}
+.imgBLogin{
+	position: absolute;
+	right: 20px;
+	top: 100px  ;
+	transform: scaleX(-1);
+}
+
+
+.btnHomeRegisterContainer{
+    position: absolute;
+    top: 100px;
+    left: 0;
+}
+
+.titleFormCreateProduct{
+    font-size: 30px;
+    font-family: "Yanone Kaffeesatz";
+}
+
+.btnHome{
+    background-color: #30925E;
+    border: none;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    font-family: "Yanone Kaffeesatz";
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btnHome:hover {
+    background-color: #29b66b;
+  }
+  
+  .login_google{
+    padding: 10px 20px;
+    background-color: #5524a5;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 17px;
+	cursor: pointer;
+	margin-bottom: 20px;
+  margin-left: 3px;
+  }

@@ -1,0 +1,22 @@
+.orderTableUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+.orderTableUser table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    justify-content: flex-end;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.324);
+}
+
+.orderTableUser table td{
+    vertical-align: bottom;
+}
+
+.containerListOrdUser{
+    height: 43em;
+}

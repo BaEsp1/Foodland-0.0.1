@@ -1,0 +1,194 @@
+.userProfile {
+    display: flex;
+    flex-direction: column;
+}
+
+.btnHome{
+    position: absolute;
+    top: 100px;
+    left: 0;
+}
+
+.profileCard {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin-bottom: 4%; 
+    align-self: center;
+    border-radius: 20px;
+    padding: 1%;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.336);
+}
+.profileCard .left {
+  background-color: rgba(128, 128, 128, 0.062);
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  border-radius: 22px 0px 0px 22px;
+  justify-content: center;
+}
+
+.profileCard .left h1,h3 {
+    display: flex;
+}
+.left p {font-size: 13px; padding: 5px;  border-radius: 4px; margin-top: 5%;border: 1px solid rgba(155, 114, 80, 0.541)}
+
+.profileCard .left img {
+    width: 50%;
+    margin-top: 7%;
+}
+.profileCard .right {
+    
+    width:57%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 5%;
+    border-left: 1px dashed rgba(45, 90, 55, 0.685);
+    background-color: rgba(128, 128, 128, 0.062);
+    font-family: "Yanone Kaffeesatz";
+    letter-spacing:0.5px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+.profileCard .right h1 {
+    font-size: 40px;
+  
+    margin-top: 7%;
+    color: rgba(0, 0, 0, 0.616);
+}
+.profileCard .right h3 {
+    font-size: 23px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.747);
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+.profileCard .right h3 span{
+ font-weight: 600;
+}
+
+.left-btns {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+}
+
+.left-btns button {
+    width: 100%;
+    margin-bottom: 12%;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 7px;
+    border: transparent;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.336);
+   
+    
+}
+.left-btns button:hover  {
+    box-shadow: 3px 4px 18px rgba(0, 0, 0, 0.582);
+}
+.singOut-btn {
+    background-color: rgba(235, 17, 17, 0.692);
+    color: white;
+}
+
+.editProfile-btn{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    width: 20%;
+    height: 30px;
+    font-size: 15px;
+    color: green;
+    border: transparent;
+}
+
+.exitEditMode-btn{
+    position: relative;
+    top: -240px;
+    left: 10px;
+    background-color: red;
+    border: none;
+    color: white;
+}
+
+.Banner1{
+    height: 5em;
+    width: auto;
+}
+
+.left h1 span{
+    color:green;
+    font-weight: 500;
+    vertical-align: super;
+
+}
+.left h3 span{
+    color:green;
+    font-weight: 500;
+    vertical-align: super;
+    margin-right: 2%;
+
+}
+
+.PaypalLogo{
+    width: 35%;
+    border-radius: 20px;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.336);
+    padding:0 3% 0 3%;
+    display: flex;
+    align-self: flex-start;
+    margin-right: 27%;
+}
+
+.ContainerShipping{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ContainerShipping label{
+    font-size: 20px;
+    color:green;
+    margin-bottom: 1%;
+}
+
+.ContainerShipping label input{
+    border-radius: 10px;
+    border:1px solid grey;
+    font-size: 15px;
+}
+
+.ContainerShipping button{
+    background-color: green;
+    color:white;
+    border: 2px solid green;
+    border-radius: 7px;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.336);
+    height: 30px;
+}
+.ContainerShipping button:hover{
+    background-color: rgb(71, 131, 71);
+}
+
+.Hi{
+    color: rgba(0, 0, 0, 0.38);
+    font-family: "Yanone Kaffeesatz";
+    letter-spacing:0.5px;
+    font-style:oblique;
+}
+
+.butonEdit{
+    background-color: green;
+    color:white;
+    border: 2px solid green;
+    border-radius: 7px;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.336);
+    height: 30px;
+}
+.butonEdit:hover{
+    background-color: rgb(71, 131, 71);
+}

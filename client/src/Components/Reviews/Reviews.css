@@ -1,0 +1,70 @@
+.containerReviews{
+    margin-bottom: 2%;
+}
+
+.containerReviews ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px auto;
+    gap: 34px;
+}
+.containerReviews li{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    text-size-adjust: auto;
+    border-radius: 20px;
+    background-color: rgb(231 223 223 / 30%);
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 62%);
+}
+
+.containerReviews .NotSign{
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 62%);
+}
+
+.alert-info {
+    color: #2020a0;
+    background-color: #e0e0ff;
+    border-radius: 20px;
+    width: -moz-fit-content;
+    margin: auto;
+    width: 80%;
+}
+
+.NotSign form div label{
+    color: rgb(26, 102, 1);
+    display: block;
+    font-weight: bolder;
+}
+select#rating{
+    border-radius: 20px;
+    width: 20%;
+}
+
+textarea#comment{
+    border-radius: 5px;
+    font-size: 16px;
+    height: 120px;
+    width: 80%;
+}
+
+button.primary{
+    height: 35px;
+    width: 200px;
+    background-color: #54B216;
+    margin: 4% 0 5%;
+    border: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 7px;
+    box-shadow: 3px 4px 12px rgb(0 0 0 / 62%);
+    color: white;
+}
+
+button.primary:hover{
+    background-color: #78b64f;
+}

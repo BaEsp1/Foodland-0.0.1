@@ -1,0 +1,56 @@
+.carrousel {
+    margin-bottom: 3%;
+}
+
+
+.carrouselContainer {
+  width: 100%;
+}
+.carrousel img {
+  width: 81%;
+  height: 200px;
+  object-fit: contain;
+}
+.carrousel div {
+  background-color: #cdcdcdfa;
+    display: flex;
+    align-items: center;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+  font-size: 30px;
+}
+
+.slick-prev:before {
+  content: "\f104";
+}
+
+.slick-next:before {
+  content: "\f105";
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.slick-prev {
+  left: 20px;
+}
+
+.slick-next {
+  right: 20px;
+}

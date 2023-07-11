@@ -1,0 +1,164 @@
+.DetailCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    margin-top: 3%;
+}
+
+
+.DetailCardCont .breadcrumb {
+    margin-left: 2%;
+    display: flex;
+    width: 51%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2%;}
+
+.DetailCardCont .breadcrumb p {
+    margin-left: 1%;
+    margin-right: 1%;
+    color: green;
+}
+.detail-img {
+width: 50%;
+display: flex;
+justify-content: center;
+}
+.detail-img img {
+width: 56%;
+}
+
+.detail-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.detail-info h1 {
+padding-top: 5px;
+margin-top: 0;
+width: 80%;
+text-align: start;
+}
+.detail-info h2{
+  color: red;
+  font-size: 30px;
+  margin-top: 7%;
+}
+.detail-info h4 {
+    margin-bottom: 0;
+}
+
+.detail-info span {
+    text-align: start;
+    width: 80%;
+    margin-bottom: 3%;
+}
+
+.addButton{
+    height: 35px;
+    width: 300px;
+    background-color: #54B216;
+    margin: 4% 0 5% ;
+    border: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 7px;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.623);
+    color: white;
+}
+
+
+.addButton:hover{
+    background-color: #78b64f;
+}
+
+.returnButton{
+    height: 35px;
+    width: 37%;
+    border: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 7px;
+}
+.returnButton:hover {
+    background-color: rgba(95, 95, 95, 0.226);
+}
+.contadorr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 100px;
+ }
+
+ .contadorr button {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    color: rgb(51, 51, 51);
+    background-color: rgba(146, 146, 146, 0.096);
+    border: transparent;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.623);
+ }
+
+ .contadorr button:hover {
+    background-color:#54B216
+ }
+
+ .buttonsDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+ }
+
+ .BuyNow{
+    height: 35px;
+    width: 300px;
+    background-color: rgb(26, 102, 1);
+    margin: 4% 0 5% ;
+    border: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 7px;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.623);
+    color: #54B216;
+ }
+
+.BuyNow a{
+    background-color: rgb(26, 102, 1);
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 297px;
+    align-items: center;
+    color: white;
+    margin-left: -4px;
+    border-radius: inherit;
+}
+.BuyNow a:hover{
+    background-color: rgb(67, 111, 52);
+}
+
+.addButton2 {
+    width: 300px;
+    height: 35px;
+    background-color: #b21616;
+    margin-top: 7%;
+    margin-bottom: 2%;
+    border: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 7px;
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.623);
+    color: white;
+}

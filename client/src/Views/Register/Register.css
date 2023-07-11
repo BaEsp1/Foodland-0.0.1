@@ -1,0 +1,23 @@
+.registerContainer{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.btnHomeRegisterContainer{
+    position: absolute;
+    top: 100px;
+    left: 0;
+}
+
+.imgARegister{
+    position: absolute;
+	left: 20px;
+    bottom: 0;
+}
+.imgBRegister{
+	position: absolute;
+	right: 20px;
+	top: 100px  ;
+	transform: scaleX(-1);
+}

@@ -1,0 +1,41 @@
+.containerHomeAdm{
+    display: flex;
+    flex-direction: row;
+}
+.listAdmContainerGeneral{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.admBtnContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+}
+
+.listAdm{
+    display: block;
+    height: 10%;
+    width: 140px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin-top: 100%;
+    
+}
+.listAdm:hover{
+    text-decoration: underline;
+}
+
+.listAdm2{
+    color: red;
+    display: block;
+    width: 200px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin-top: 100%;
+}
+
+.listAdm2:hover{
+    text-decoration: underline;
+}
