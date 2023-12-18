@@ -8,6 +8,7 @@ import orderRouter from "./src/routes/order.js";
 import cors from "cors";
 import path from "path";
 import uploadRouter from "./src/routes/uploadRoute.js";
+const port = process.env.PORT || 5001;
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://foodlandmarket.vercel.app"],
+    origin: "*",
     credentials: true,
   })
 );
@@ -28,7 +29,7 @@ mongoose
     console.log("Connected to db");
   })
   .catch((err) => {
-    console.log(err.message);
+    console.error("Error connecting to MongoDB Atlas:", err);
   });
 
 app.use("/api/upload", uploadRouter);  
@@ -37,15 +38,18 @@ app.use("/api/seed", seedRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 
-app.get("/api/config/paypal", (req, res) => {
-  res.send(process.env.PAYPAL_CLIENT_ID || "sb");
-});
+// app.get("/api/config/paypal", (req, res) => {
+//   res.send(process.env.PAYPAL_CLIENT_ID || "sb");
+// });
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  console.log(`Server iss running at http://localhost:${port}`);
+  console.log(`Server is running at http://localhost:${port}`);
 });
+
+
+// MONGODB_URI=mongodb+srv://foodland:foodland@cluster0.21qysah.mongodb.net/?retryWrites=true&w=majority
+// PORT=5001

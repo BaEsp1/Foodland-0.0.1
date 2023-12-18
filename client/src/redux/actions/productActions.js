@@ -2,8 +2,8 @@ import axios from "axios";
 
 import * as action from "../constants/productConstants"; // Import para traer todas las actions-types
 
-// const URL = process.env.REACT_APP_URL ?? "http://localhost:5000";
-const URL = "https://foodland-production.up.railway.app";
+const URL = process.env.REACT_APP_URL ?? "http://localhost:5000";
+// const URL = "https://foodland-production.up.railway.app";
 
 /* ========================*  LOADER *======================== */
 export function loading() {
