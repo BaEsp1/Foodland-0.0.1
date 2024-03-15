@@ -1,8 +1,8 @@
-import express from 'express';
-import multer from 'multer';
-import { v2 as cloudinary } from 'cloudinary';
-import streamifier from 'streamifier';
-import { isAdmin, isAuth } from "../middlewares/middlewares.js"
+const express = require('express');
+const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
+const { isAdmin, isAuth } = require('../middlewares/middlewares.js');
 
 const upload = multer();
 
@@ -35,4 +35,5 @@ uploadRouter.post(
     res.send(result);
   }
 );
-export default uploadRouter;
+
+module.exports= uploadRouter;

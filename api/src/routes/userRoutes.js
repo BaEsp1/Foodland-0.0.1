@@ -1,10 +1,11 @@
-import express from "express";
-import bcrypt from "bcryptjs";
-import expressAsyncHandler from "express-async-handler";
-import User from "../models/user.js";
-import { generateToken, isAdmin, isAuth } from "../middlewares/middlewares.js";
-import nodemailer from "nodemailer";
+const express = require("express");
+const bcrypt = require("bcryptjs");
+const expressAsyncHandler = require("express-async-handler");
+const { generateToken, isAdmin, isAuth } = require("../middlewares/middlewares.js");
+const nodemailer = require("nodemailer");
+const { User } = require("../../Database/database.js");
 const userRouter = express.Router();
+
 
 //Ruta para que el Admin pueda traer todos los usuarios
 userRouter.get(
@@ -12,7 +13,7 @@ userRouter.get(
 	isAuth,
 	isAdmin,
 	expressAsyncHandler(async (req, res) => {
-		const users = await User.find({});
+		const users = await User.findAll({});
 		res.send(users);
 	})
 );
@@ -178,4 +179,4 @@ userRouter.delete(
 	})
 );
 
-export default userRouter;
+module.exports = userRouter;
