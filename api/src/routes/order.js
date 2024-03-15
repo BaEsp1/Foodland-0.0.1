@@ -1,10 +1,9 @@
-import express from "express";
-import expressAsyncHandler from "express-async-handler";
-import Order from "../models/order.js";
-import { isAuth, isAdmin } from "../middlewares/middlewares.js";
-import User from "../models/user.js";
-import Product from "../models/product.js";
-import nodemailer from "nodemailer";
+const express = require("express");
+const expressAsyncHandler = require("express-async-handler");
+const { isAuth, isAdmin } = require("../middlewares/middlewares.js");
+const nodemailer = require("nodemailer");
+const { Order, User, Product } = require("../../Database/database.js");
+
 
 const orderRouter = express.Router();
 
@@ -89,7 +88,7 @@ orderRouter.get(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const orders = await Order.find().populate("user", "name");
+    const orders = await Order.findAll().populate("user", "name");
     res.send(orders);
   })
 );
@@ -350,4 +349,4 @@ orderRouter.delete(
   })
 );
 
-export default orderRouter;
+module.exports = orderRouter;

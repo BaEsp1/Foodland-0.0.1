@@ -1,14 +1,14 @@
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import seedRouter from "./src/routes/seedRoutes.js";
-import userRouter from "./src/routes/userRoutes.js";
-import Product from "./src/routes/products.js";
-import orderRouter from "./src/routes/order.js";
-import cors from "cors";
-import path from "path";
-import uploadRouter from "./src/routes/uploadRoute.js";
+const express = require("express");
+const dotenv = require("dotenv");
+const seedRouter = require("./src/routes/seedRoutes.js");
+const userRouter = require("./src/routes/userRoutes.js");
+const Product = require("./src/routes/products.js");
+const orderRouter = require("./src/routes/order.js");
+const cors = require("cors");
+const uploadRouter = require("./src/routes/uploadRoute.js");
+const { conn } = require('./Database/database.js');
 const port = process.env.PORT || 5001;
+
 
 dotenv.config();
 
@@ -22,15 +22,10 @@ app.use(
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log("Connected to db");
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB Atlas:", err);
-  });
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
 
 app.use("/api/upload", uploadRouter);  
 app.use("/api/products", Product);
@@ -46,10 +41,16 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+(async () => {
+  try {
+    await conn.sync({ alter: true });
+    console.log('Base de datos sincronizada');
+  } catch (error) {
+    console.error('Error sincronizando la base de datos:', error);
+  }
 
-
-// MONGODB_URI=mongodb+srv://foodland:foodland@cluster0.21qysah.mongodb.net/?retryWrites=true&w=majority
-// PORT=5001
+  // Aquí el resto de tu código de inicialización del servidor
+  app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
+  });
+})();
