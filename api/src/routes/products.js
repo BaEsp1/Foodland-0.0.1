@@ -18,12 +18,14 @@ productRouter.get(
   "/categories",
   expressAsyncHandler(async (req, res) => {
     const categories = await Product.findAll({
-      attributes: ['category'],
-      group: ['category'],
+      attributes: ['category', 'imageCategory'], 
+      group: ['category', 'imageCategory'],
     });
     res.send(categories);
   })
 );
+
+
 
 productRouter.post(
   "/",

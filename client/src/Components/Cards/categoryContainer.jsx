@@ -10,7 +10,7 @@ import {
 import { setFilterState } from "../../redux/actions/productActions";
 import { useSelector, useDispatch } from "react-redux";
 // import Carrousel from "../Carrousel/Carrousel";
-import oferta1 from "../../Imgs/oferta1.jpeg";
+// import oferta1 from "../../Imgs/oferta1.jpeg";
 
 
 
@@ -27,7 +27,7 @@ const CategoryContainer = () => {
     if (a._id > b._id) return 1;
     return 0;
   });
-
+  console.log(categories)
   /* DISPATCH PARA TRAER LAS CATEGORIAS */
 
   const dispatch = useDispatch();
@@ -63,8 +63,8 @@ const CategoryContainer = () => {
           </div>
         </NavLink> */}
         {localCategories?.map((e) => (
-          <NavLink key={e._id} to={`/categories/${e._id}`}>
-            <CategoryCard key={e._id} name={e._id} image={e.imageCategory} />
+          <NavLink key={e.category} to={`/categories/${e.category}`}>
+            <CategoryCard key={e.category} name={e.category} image={e.imageCategory} />
           </NavLink>
         ))}
       </div>

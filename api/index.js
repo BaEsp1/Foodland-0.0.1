@@ -7,7 +7,7 @@ const orderRouter = require("./src/routes/order.js");
 const cors = require("cors");
 const uploadRouter = require("./src/routes/uploadRoute.js");
 const { conn } = require('./Database/database.js');
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 
 dotenv.config();
