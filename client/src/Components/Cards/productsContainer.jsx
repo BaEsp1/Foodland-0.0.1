@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, NavLink, Link } from "react-router-dom";
+import { useParams, NavLink} from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Filters from "./Filters";
 import Loader from "../Loader/Loader";
@@ -126,6 +126,7 @@ const ProductsContainer = () => {
     }
    },[dispatch, filterState, categoriesId]);
 
+
   if (userInfo?.isAdmin) {
     return (
       <div className="productsContainer">
@@ -159,22 +160,22 @@ const ProductsContainer = () => {
               {display ? (
                 <Loader />
               ) : Array.isArray(currentProducts) && currentProducts[0]?.stock ? (
-                currentProducts.map((product) => {
-                  const id = product["_id"];
+                currentProducts.map((e) => {
                   return (
                     <ProductCard
-                      key={id}
-                      id={id}
-                      name={product.name}
-                      price={product.price}
-                      image={product.image}
-                      description={product.description}
-                      rating={product.rating}
-                      numReviews={product.numReviews}
-                      slug={product.slug}
-                      stock={product.stock}
-                      active={product.active}
-                      funtionOnchange={AddProductoToCart} />
+                      key={e.id}
+                      id={e.id}
+                      name={e.name}
+                      price={e.price}
+                      image={e.image}
+                      description={e.description}
+                      rating={e.rating}
+                      numReviews={e.numReviews}
+                      slug={e.slug}
+                      stock={e.stock}
+                      active={e.active}
+                      funtionOnchange={AddProductoToCart}
+                    />
                   );
                 })
               ) : (
@@ -250,11 +251,10 @@ const ProductsContainer = () => {
                 <Loader />
               ) : Array.isArray(currentProducts) ? (
                 currentProducts?.map((e) => {
-                  const id = e["_id"];
                   return (
                     <ProductCard
-                      key={id}
-                      id={id}
+                      key={e.id}
+                      id={e.id}
                       name={e.name}
                       price={e.price}
                       image={e.image}

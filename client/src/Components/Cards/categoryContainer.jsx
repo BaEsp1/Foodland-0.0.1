@@ -27,7 +27,6 @@ const CategoryContainer = () => {
     if (a._id > b._id) return 1;
     return 0;
   });
-  console.log(categories)
   /* DISPATCH PARA TRAER LAS CATEGORIAS */
 
   const dispatch = useDispatch();

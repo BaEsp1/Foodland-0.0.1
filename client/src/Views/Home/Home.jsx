@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import CategoryContainer from "../../Components/Cards/categoryContainer";
@@ -13,6 +13,7 @@ import UserProfile from "../UserProfile/UserProfile";
 import OrdersAdmin from "../../Components/OdersAdmin/OrdersAdmin";
 import { signout } from "../../redux/actions/userActions";
 import Chart from "../../Components/Charts/Charts";
+import { setProduct } from "../../redux/actions";
 
 const Home = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
@@ -25,6 +26,7 @@ const Home = () => {
   const [showUser, setShowUser] = useState(false); // Estado ver usuarios
   const [showProfile, setShowProfile] = useState(false); // Estado mi perfil
   const [showOrders, setShowOrders] = useState(false); // Estado mis ventas
+  const dispatch = useDispatch();
 
   const handleImageLoad = () => {
     setImagesLoaded(true);
@@ -33,6 +35,11 @@ const Home = () => {
   /* =================== TOKEN USER ===================*/
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+
+  useEffect(()=>{
+    dispatch(setProduct([]))
+  })
+  
 
   /* =================== FUNCTION VER VENTANAS ===================*/
   /* =================== STOCK ===================*/
@@ -102,11 +109,11 @@ const Home = () => {
 
   /* =================== LOG OUT ===================*/
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const signOutHandler = () => {
     dispatch(signout());
     navigate("/");
   };
+
 
   if (userInfo?.isAdmin) {
     return (

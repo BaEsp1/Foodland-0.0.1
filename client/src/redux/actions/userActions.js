@@ -86,11 +86,13 @@ export const signIn = (user) => (dispatch) => {
 export const register = (name, email, password) => async (dispatch) => {
   dispatch({ type: USER_REGISTER_REQUEST, payload: name, email, password });
   try {
+    console.log(name , email, password)
     const { data } = await Axios.post(`${URL}/api/users/signup`, {
       name,
       email,
       password,
     });
+    console.log(data)
     dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     localStorage.setItem("userInfo", JSON.stringify(data));

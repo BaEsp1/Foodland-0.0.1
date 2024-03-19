@@ -134,7 +134,7 @@ productRouter.get(
   "/slug/:id",
   expressAsyncHandler(async (req, res, next) => {
     const { id } = req.params;
-    const product = await Product.findById(id);
+    const product = await Product.findByPk(id);
     if (!product) {
       return next({ status: 404, message: "No se encontro el item" });
     }
@@ -148,7 +148,7 @@ productRouter.post(
   isAuth,
   expressAsyncHandler(async (req, res) => {
     const productId = req.params.id;
-    const product = await Product.findById(productId);
+    const product = await Product.findByPk(productId);
     if (product) {
       if (product.reviews.find((productReview) => productReview.name === req.user.name)) {
         return res

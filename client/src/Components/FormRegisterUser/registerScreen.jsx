@@ -30,6 +30,7 @@ function RegisterScreen(props) {
 		if (password !== confirmPassword) {
 			alert("Passwords don't match");
 		} else {
+			console.log(name, email, password)
 			dispatch(register(name, email, password));
 		}
 	};

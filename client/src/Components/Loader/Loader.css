@@ -83,3 +83,7 @@
       opacity: 0;
     }
   }
+
+  .contenedorLoader .loader img{
+    width: 5em;
+  }

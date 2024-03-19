@@ -14,17 +14,15 @@ import { updateCart } from "../../redux/actions/cartActions";
 
 const DetailCard = () => {
   const { id } = useParams();
-  const decodedName = decodeURI(id);
   const {product} = useSelector((state) => state.products)
 
   
   // const product = products.find((product) => product.name === decodedName);
   const dispatch = useDispatch();
-
   
   useEffect(() => {
-    dispatch(getDetail(decodedName));
-  }, [dispatch,decodedName]);
+    dispatch(getDetail(id));
+  }, [dispatch,id]);
   
   // ======== Agregar productos al carrito====
   const [quantity, setQuantity] = useState(1);

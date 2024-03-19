@@ -25,7 +25,7 @@ export const getAllProducts = () => {
     try {
       dispatch(loading());
       const response = await axios.get(`${URL}/api/products`);
-      console.log(response);
+      // console.log(response);
       if (response.data)
         dispatch({
           type: action.GET_ALL_PRODUCTS,
@@ -33,7 +33,7 @@ export const getAllProducts = () => {
         });
       dispatch(ready());
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       dispatch({
         type: action.GET_ALL_PRODUCTS,
         payload: error,
@@ -54,7 +54,7 @@ export const getAllCategories = () => {
       });
       dispatch(ready());
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       dispatch({
         type: action.GET_ALL_CATEGORIES,
         payload: error,
@@ -126,7 +126,7 @@ export const getByCategory = (category) => {
         dispatch(ready());
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       dispatch({
         type: action.GET_BY_CATEGORY,
         payload: error,
