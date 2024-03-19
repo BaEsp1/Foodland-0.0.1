@@ -3,10 +3,11 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const POSTGRES_URL  = process.env.POSTGRES_URL; 
+import pg from "pg";
 
 //Inicio de Base de datos :
 const sequelize = new Sequelize(POSTGRES_URL, {
-  // dialectModule: pg,
+  dialectModule: pg,
   logging: false,
   native: false,
   dialectOptions: {

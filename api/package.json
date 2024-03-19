@@ -22,7 +22,7 @@
     "nodemailer": "^6.9.2",
     "streamifier": "^0.1.1",
     "sequelize": "^6.11.0",
-    "pg": "^8.7.1",
+    "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
     "vercel": "^32.6.1"
   },
