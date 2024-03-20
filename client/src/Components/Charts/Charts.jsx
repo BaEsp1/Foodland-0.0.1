@@ -122,79 +122,60 @@ const dataChart2 = {
   
   // PRIMER CHART 
 
-  useEffect(() => {  
-    console.log(users)
-    const nuevoArray = [];     // recorro las ordenes y guardo solo los productos {name, quantity}
+  useEffect(() => {
+    if (!Array.isArray(myOrders)) {
+      return;
+    }
+  
+    const nuevoArray = [];
     myOrders.forEach(e => {
       const { orderItems } = e;
-      if (orderItems.length > 0) {
+      if (Array.isArray(orderItems) && orderItems.length) {
         const { name, quantity, image } = orderItems[0];
         nuevoArray.push({ name, quantity, image });
       }
     });
-    nuevoArray.forEach(item => {  // comparo cada producto con la lista original de productos y le pongo la categoria
-      const productoEncontrado = allProducts.find(producto => producto.name === item.name);
-      if (productoEncontrado) {
-        item.category = productoEncontrado.category;
+  
+    const cantidadPorCategoria = {};
+    nuevoArray.forEach(producto => {
+      if (cantidadPorCategoria[producto.category]) {
+        cantidadPorCategoria[producto.category] += producto.quantity;
+      } else {
+        cantidadPorCategoria[producto.category] = producto.quantity;
       }
     });
-
-
-const cantidadPorCategoria = {};
-
-nuevoArray.forEach(producto => {
-  if (cantidadPorCategoria[producto.category]) {
-    cantidadPorCategoria[producto.category] += producto.quantity;
-  } else {
-    cantidadPorCategoria[producto.category] = producto.quantity;
-  }
-});
-console.log(cantidadPorCategoria)
-
-  setData(cantidadPorCategoria);
-    
   
-  // ------------ SECOND CHART  -------------- 
-
-
-// Determinar qué producto se repite más veces y menos veces en cada categoría
-const productosMasVendidos = [];
-const productosMenosVendidos = [];
-
-// Verificar si nuevoArray está vacío o no
-if (nuevoArray.length > 0) {
-  nuevoArray.forEach((producto) => {
-    if (!productosMasVendidos[producto.category]) {
-      productosMasVendidos[producto.category] = { name: '', quantity: 0 , image:''};
+    setData(cantidadPorCategoria);
+  
+    const productosMasVendidos = {};
+    const productosMenosVendidos = {};
+  
+    if (nuevoArray.length > 0) {
+      nuevoArray.forEach((producto) => {
+        if (!productosMasVendidos[producto.category]) {
+          productosMasVendidos[producto.category] = { name: '', quantity: 0, image: '' };
+        }
+  
+        if (!productosMenosVendidos[producto.category]) {
+          productosMenosVendidos[producto.category] = { name: '', quantity: Infinity, image: '' };
+        }
+  
+        if (producto.quantity > productosMasVendidos[producto.category].quantity) {
+          productosMasVendidos[producto.category] = { name: producto.name, quantity: producto.quantity, image: producto.image };
+        }
+  
+        if (producto.quantity < productosMenosVendidos[producto.category].quantity) {
+          productosMenosVendidos[producto.category] = { name: producto.name, quantity: producto.quantity, image: producto.image };
+        }
+      });
+    } else {
+      console.log('El array nuevoArray está vacío.');
     }
-
-    if (!productosMenosVendidos[producto.category]) {
-      productosMenosVendidos[producto.category] = { name: '', quantity: Infinity , image:''};
-    }
-
-    if (producto.quantity > productosMasVendidos[producto.category].quantity) {
-      productosMasVendidos[producto.category].name = producto.name;
-      productosMasVendidos[producto.category].quantity = producto.quantity;
-      productosMasVendidos[producto.category].image = producto.image;
-
-    }
-
-    if (producto.quantity < productosMenosVendidos[producto.category].quantity) {
-      productosMenosVendidos[producto.category].name = producto.name;
-      productosMenosVendidos[producto.category].quantity = producto.quantity;
-      productosMenosVendidos[producto.category].image = producto.image;
-    }
-  });
-
-} else {
-  console.log('El array nuevoArray está vacío.');
-}
-
-//setear para los productos mas y menos vendidos
- setBlueData(productosMasVendidos)
- setGreenData(productosMenosVendidos)
-
+  
+    setBlueData(productosMasVendidos);
+    setGreenData(productosMenosVendidos);
   }, [allProducts, myOrders]);
+  
 
 
   return (

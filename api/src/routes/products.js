@@ -75,7 +75,7 @@ productRouter.put(
     const productId = req.params.id;
     const modStock = req.body.stock;
 
-    const product = await Product.findById(productId);
+    const product = await Product.findByPk(productId);
     if (product) {
       product.stock = product.stock + modStock;
       await product.save();
@@ -107,7 +107,7 @@ productRouter.put(
       numReviews,
       imageCategory,
     } = req.body;
-    const product = await Product.findById(id);
+    const product = await Product.findByPk(id);
     if (product) {
       product.active = active;
       product.name = name ?? product.name;

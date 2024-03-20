@@ -7,12 +7,12 @@ import img2 from "../../Imgs/LogIn-Registro/Img2.png";
 import { signin } from "../../redux/actions/userActions";
 import Loader from "../../Components/Loader/Loader";
 //import MessageBox from "../../Components/Error/messageBox";
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 import Swal from "sweetalert2";
 
 export default function SigninScreen() {
   const navigate = useNavigate();
-  const { loginWithRedirect } = useAuth0();
+  // const { loginWithRedirect } = useAuth0();
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get("redirect");
   const redirect = redirectInUrl ? redirectInUrl : "/";
@@ -80,9 +80,9 @@ export default function SigninScreen() {
           <button className="primary" type="submit">
             Sign In
           </button>
-          <button className="login_google" onClick={() => loginWithRedirect()}>
+          {/* <button className="login_google" onClick={() => loginWithRedirect()}>
             Sign in with Google
-          </button>
+          </button> */}
         </div>
         <div>
           <label />

@@ -88,31 +88,37 @@ orderRouter.get(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const orders = await Order.findAll().populate("user", "name");
+    const orders = await Order.findAll({
+      include: {
+        model: User,
+        attributes: ["name"],
+      },
+    });
     res.send(orders);
   })
 );
 
-//Ruta para que el usuario cree una orden de compra
+
+// Ruta para que el usuario cree una orden de compra
 orderRouter.post(
   "/",
   isAuth,
   expressAsyncHandler(async (req, res) => {
-   
-    const newOrder = new Order({
-      orderItems: req.body.orderItems.map((x) => ({ ...x, product: x.id })),
+    const newOrder = await Order.create({
+      orderItems: req.body.orderItems.map((x) => ({ ...x, productId: x.id })),
       shippingAddress: req.body.shippingAddress,
       paymentMethod: req.body.paymentMethod,
       itemsPrice: req.body.itemsPrice,
       shippingPrice: req.body.shippingPrice,
       taxPrice: req.body.taxPrice,
       totalPrice: req.body.totalPrice,
-      user: req.user._id,
+      userId: req.user._id,
     });
-    const order = await newOrder.save();
-    res.status(201).send({ message: "New Order Created", order });
+
+    res.status(201).send({ message: "New Order Created", order: newOrder });
   })
 );
+
 
 orderRouter.post(
   "/email",
@@ -189,61 +195,44 @@ orderRouter.get(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const orders = await Order.aggregate([
-      {
-        $group: {
-          _id: null,
-          numOrders: { $sum: 1 },
-          totalSales: { $sum: "$totalPrice" },
-        },
-      },
-    ]);
-    const users = await User.aggregate([
-      {
-        $group: {
-          _id: null,
-          numUsers: { $sum: 1 },
-        },
-      },
-    ]);
-    const dailyOrders = await Order.aggregate([
-      {
-        $group: {
-          _id: { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } },
-          orders: { $sum: 1 },
-          sales: { $sum: "$totalPrice" },
-        },
-      },
-      { $sort: { _id: 1 } },
-    ]);
-    const productCategories = await Product.aggregate([
-      {
-        $group: {
-          _id: "$category",
-          count: { $sum: 1 },
-        },
-      },
-    ]);
+    const orders = await Order.findAndCountAll();
+    const users = await User.findAndCountAll();
+    const dailyOrders = await Order.findAll({
+      attributes: [
+        [Sequelize.fn("date_trunc", "day", Sequelize.col("createdAt")), "date"],
+        [Sequelize.fn("count", Sequelize.col("*")), "orders"],
+        [Sequelize.fn("sum", Sequelize.col("totalPrice")), "sales"]
+      ],
+      group: ["date"],
+      order: [[Sequelize.literal("date"), "ASC"]],
+    });
+    const productCategories = await Product.findAll({
+      attributes: ["category", [Sequelize.fn("count", Sequelize.col("*")), "count"]],
+      group: ["category"]
+    });
+
     res.send({ users, orders, dailyOrders, productCategories });
   })
 );
+
 
 //Ruta que le manda al usuario todas sus ordenes de compra
 orderRouter.get(
   "/mine",
   isAuth,
   expressAsyncHandler(async (req, res) => {
-    const orders = await Order.find({ user: req.user._id });
+    const orders = await Order.findAll({ where: { user: req.user._id } });
     res.send(orders);
   })
 );
+
 
 //Ruta que manda la orden segun id
 orderRouter.get(
   "/:id",
   isAuth,
   expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id);
+    const order = await Order.findByPk(req.params.id);
     if (order) {
       res.send(order);
     } else {
@@ -257,7 +246,7 @@ orderRouter.put(
   "/:id/pay",
   isAuth,
   expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id);
+    const order = await Order.findByPk(req.params.id);
     if (order) {
       order.isPaid = true;
       order.paidAt = Date.now();
@@ -318,7 +307,7 @@ orderRouter.put(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id);
+    const order = await Order.findByPk(req.params.id);
     if (order) {
       order.isDelivered = true;
       order.deliveredAt = Date.now();
@@ -336,7 +325,7 @@ orderRouter.delete(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const order = await Order.findById(req.params.id);
+    const order = await Order.findByPk(req.params.id);
     if (order) {
       const [deleted] = await order.update({
         active: false,

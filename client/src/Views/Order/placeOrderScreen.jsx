@@ -16,7 +16,7 @@ export default function PlaceOrderScreen() {
   const totalstate = useLocalStore("resumen",[])
   const { userInfo } = useSelector((state) => state.userSignin);
 
- // console.log({ userInfo });
+//  console.log({ userInfo });
   const {
     orders: { totalPrice: amount, active },
   } = useSelector((state) => state.order);
@@ -32,7 +32,7 @@ export default function PlaceOrderScreen() {
 
   const [shippingDiv, setshippingDiv] = useState(false);  //Esto es para que aparezca o no el div
   const [shippingInfo, setshippingInfo] = useState(false); // Este es como validador
-  const [shippigUserLocalStore, setShippingUserLocalStore] = useLocalStore("Shipping", []);
+  const [ setShippingUserLocalStore] = useLocalStore("Shipping", []);
   const [shippValue, setShippValue] = useState({   
     name:"",
     lastname:"",
@@ -122,7 +122,7 @@ export default function PlaceOrderScreen() {
       });
       return;
     }
-    else if (!userInfo || !userInfo._id) {
+    else if (!userInfo) {
       swal({
         title: "You need to be logged in to complete your purchase",
         icon: "warning",

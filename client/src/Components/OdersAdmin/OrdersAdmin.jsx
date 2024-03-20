@@ -99,19 +99,19 @@ const OrdersAdmin = () => {
             <p className="A">{order.shippingAddress.fullName}</p>
           </td>
           <td className="restriccion">
-            {order.orderItems.slice(0, 4).map((item) => (
+            {Array.isArray(order.orderItems) && order.orderItems.slice(0, 4).map((item) => (
               <div key={item._id}>
                 <p className="productListOrder">{item.name}</p>
               </div>
             ))}
           </td>
-          <td >
-            {order.orderItems.slice(0, 4).map((item) => (
+          <td>
+            {Array.isArray(order.orderItems) && order.orderItems.slice(0, 4).map((item) => (
               <p className="productListOrder">usd$ {item.price}</p>
             ))}
           </td>
           <td>
-            {order.orderItems.slice(0, 4).map((item) => (
+            {Array.isArray(order.orderItems) && order.orderItems.slice(0, 4).map((item) => (
               <p className="productListOrder">{item.quantity}</p>
             ))}
           </td>

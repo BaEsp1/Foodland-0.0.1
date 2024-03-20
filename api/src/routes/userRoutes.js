@@ -24,7 +24,7 @@ userRouter.get(
 	isAuth,
 	isAdmin,
 	expressAsyncHandler(async (req, res) => {
-		const user = await User.findById(req.params.id);
+		const user = await User.findByPk(req.params.id);
 		if (user) {
 			res.send(user);
 		} else {
@@ -38,7 +38,7 @@ userRouter.put(
 	"/profile/:id",
 	isAuth,
 	expressAsyncHandler(async (req, res) => {
-		const user = await User.findById(req.params.id);
+		const user = await User.findByPk(req.params.id);
 		console.log(user, req.body.user.name, req.body.user, "NAME");
 		if (user) {
 			user.name =
@@ -64,7 +64,7 @@ userRouter.put(
 	isAuth,
 	isAdmin,
 	expressAsyncHandler(async (req, res) => {
-		const user = await User.findById(req.params.id);
+		const user = await User.findByPk(req.params.id);
 		if (user) {
 			user.name = req.body.name || user.name;
 			user.email = req.body.email || user.email;
@@ -82,7 +82,7 @@ userRouter.put(
 userRouter.post(
 	"/signin",
 	expressAsyncHandler(async (req, res) => {
-		const user = await User.findOne({ email: req.body.email });
+		const user = await User.findOne({ where: { email: req.body.email } });
 		if (user) {
 			if (bcrypt.compareSync(req.body.password, user.password)) {
 				res.send({
@@ -116,7 +116,7 @@ let transporter = nodemailer.createTransport({
 userRouter.post(
 	"/signup",
 	expressAsyncHandler(async (req, res) => {
-		const existingUser = await User.findOne({ email: req.body.email });
+		const existingUser = await User.findOne({ where: { email: req.body.email } });
 		if (existingUser) {
 			res.status(400).send({ message: "You have already been registered. Please Sign In with GOOGLE." });
 			return;
@@ -165,7 +165,7 @@ userRouter.delete(
 	isAuth,
 	isAdmin,
 	expressAsyncHandler(async (req, res) => {
-		const user = await User.findById(req.params.id);
+		const user = await User.findByPk(req.params.id);
 		if (user) {
 			if (user.email === "admin@gmail.com") {
 				res.status(400).send({ message: "Cannot Delete Admin User" });
